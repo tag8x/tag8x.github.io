@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Bootstrap CSS -->
     <link p-3 me-2 href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -80,12 +80,12 @@
         </button>
       </div>
       <div id="about" class="row">
-        <div class="col m-auto">
+        <div class="col">
           <h2 class="text-white">About Me</h2>
           <div class="card mt-5 bg-black">
             <img src="tag8x_2.jpg" alt="Turgut Alp Gemicioğlu" style="max-height: 600px;max-width: 400px;">
             <div class="card-body text-white">
-              <h5 class="card-title">Turgut Alp Gemicioğlu</h5>
+              <h5 class="card-title">I am Turgut Alp Gemicioğlu</h5>
               <p class="card-text">I have been working in the web field for 6 years and I am trying to develop in many subjects. I also develop my own small ventures in my spare time. By my own definition, I am a variable who likes to improve myself.</p>
             </div>
           </div>
@@ -94,11 +94,12 @@
         border-left: 1px solid white;
         height: 100vh;
         width: 1px; ">
-        <div class="col my-auto ">
+        <div class="col my-auto">
          <div class="row ml-5">
-           
-             <h3 class="text-white"> Skills</h3>
-             <ul>
+           <h3 class="text-white"> Skills</h3>
+           <div class="col mt-5">
+             
+             <ul class="mt-5">
                <li class="text-white">HTML5</li>
                <li class="text-white">CSS3(SASS, LESS) <ul>
                  <li>Bootstrap</li>
@@ -122,9 +123,61 @@
                <li class="text-white">Swift</li>
              </ul>
 
-          <div class="col">
+           </div>
+             
+          <div class="col mt-5">
+            <canvas class="mt-5" id="myChart" width="400" height="400"></canvas>
 
           </div>
+           <canvas id="myChart" width="400" height="400"></canvas>
+
+            <script>
+              // Any of the following formats may be used
+              const ctx = document.getElementById('myChart');
+              const ctx = document.getElementById('myChart').getContext('2d');
+              const ctx = $('#myChart');
+              const ctx = 'myChart';
+              
+            </script>
+   <canvas id="myChart" width="100" height="100"></canvas>
+   <script>
+   const ctx = document.getElementById('myChart');
+   const myChart = new Chart(ctx, {
+       type: 'radar',
+       data: {
+           labels: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'WordPress', 'Python'],
+           datasets: [{
+               label: '1-3 Year',
+               data: [100, 90, 80, 85, 100, 30],
+               backgroundColor: [
+                   'rgba(255, 99, 132, 0.2)',
+                   'rgba(54, 162, 235, 0.2)',
+                   'rgba(255, 206, 86, 0.2)',
+                   'rgba(75, 192, 192, 0.2)',
+                   'rgba(153, 102, 255, 0.2)',
+                   'rgba(255, 159, 64, 0.2)'
+               ],
+               borderColor: [
+                   'rgba(255, 99, 132, 1)',
+                   'rgba(54, 162, 235, 1)',
+                   'rgba(255, 206, 86, 1)',
+                   'rgba(75, 192, 192, 1)',
+                   'rgba(153, 102, 255, 1)',
+                   'rgba(255, 159, 64, 1)'
+               ],
+               borderWidth: 1
+           }]
+       },
+       options: {
+           scales: {
+               y: {
+                   beginAtZero: true
+               }
+           }
+       }
+   });
+   </script>
+   
          
 
          </div>
